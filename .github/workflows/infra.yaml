@@ -40,12 +40,10 @@ jobs:
       run: terraform validate
 
     - name: Terraform Plan
-      if: ${{ github.event.inputs.action_type == 'plan' }}
       run: terraform plan
       working-directory: terraform 
 
     - name: Terraform Apply
-      if: ${{ github.event.inputs.action_type == 'apply' }}
       run: terraform apply -auto-approve
       working-directory: terraform
       
